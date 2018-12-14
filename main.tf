@@ -98,6 +98,8 @@ data "template_file" "runners" {
     gitlab_url  = "${var.runners_gitlab_url}"
     environment = "${var.environment}"
 
+    docker_machine_options = "${join(", ", formatlist("%q", var.docker_machine_options))}"
+
     runners_vpc_id              = "${var.vpc_id}"
     runners_subnet_id           = "${var.subnet_id_runners}"
     runners_instance_type       = "${var.docker_machine_instance_type}"

@@ -211,6 +211,12 @@ variable "docker_machine_user" {
   default     = "docker-machine"
 }
 
+variable "docker_machine_options" {
+  description = "Additional options for docker machine"
+  type        = "list"
+  default     = []
+}
+
 variable "cache_user" {
   description = "User name of the user to create to write and read to the s3 cache."
   type        = "string"
