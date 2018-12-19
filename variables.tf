@@ -29,6 +29,12 @@ variable "instance_type" {
   default     = "t2.micro"
 }
 
+variable "instance_role_json" {
+  description = "Instance role json to override the default."
+  type        = "string"
+  default     = ""
+}
+
 # list with amazon linux optimized images per region
 # HVM (SSD) EBS-Backed 64-bit
 # Amazon Linux AMI 2018.03 was released on 2018-06-28 https://aws.amazon.com/amazon-linux-ami/
