@@ -17,7 +17,9 @@
         "ec2:CancelSpotInstanceRequests",
         "ec2:DescribeSubnets",
         "ec2:AssociateIamInstanceProfile",
-        "iam:PassRole"
+        "iam:PassRole",
+        "s3:GetObject",
+        "ecr:*"
       ],
       "Effect": "Allow",
       "Resource": "*"

@@ -171,7 +171,7 @@ resource "aws_iam_instance_profile" "instance" {
 }
 
 data "template_file" "instance_role_trust_policy" {
-  template = "${length(var.instance_role_json) > 0 ? var.instance_role_json : file("${path.module}/policies/instance-role-trust-policy.json")}"
+  template = "${file("${path.module}/policies/instance-role-trust-policy.json")}"
 }
 
 resource "aws_iam_role" "instance" {
@@ -183,7 +183,7 @@ resource "aws_iam_role" "instance" {
 ### docker machine instance policy
 ################################################################################
 data "template_file" "docker_machine_policy" {
-  template = "${file("${path.module}/policies/instance-docker-machine-policy.json")}"
+  template = "${length(var.instance_role_json) > 0 ? var.instance_role_json : file("${path.module}/policies/instance-docker-machine-policy.json")}"
 }
 
 resource "aws_iam_policy" "docker_machine" {
