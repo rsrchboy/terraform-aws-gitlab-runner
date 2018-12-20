@@ -12,6 +12,7 @@ check_interval = 0
   request_concurrency = ${runners_request_concurrency}
   output_limit = ${runners_output_limit}
   limit = ${runners_limit}
+  environment = [ ${runner_environment} ]
   [runners.docker]
     tls_verify = false
     image = "${runners_image}"

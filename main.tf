@@ -87,6 +87,8 @@ data "template_file" "gitlab_runner" {
     runners_config         = "${data.template_file.runners.rendered}"
     pre_install            = "${var.userdata_pre_install}"
     post_install           = "${var.userdata_post_install}"
+    pre_install            = "${var.runners_userdata_pre_install}"
+    post_install           = "${var.runners_userdata_post_install}"
   }
 }
 
@@ -99,6 +101,8 @@ data "template_file" "runners" {
     environment = "${var.environment}"
 
     docker_machine_options = "${join(", ", formatlist("%q", var.docker_machine_options))}"
+
+    runner_environment     = "${join(", ", formatlist("%q", var.runner_environment))}"
 
     runners_vpc_id              = "${var.vpc_id}"
     runners_subnet_id           = "${var.subnet_id_runners}"

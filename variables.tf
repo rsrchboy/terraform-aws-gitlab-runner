@@ -246,6 +246,12 @@ variable "gitlab_runner_version" {
   default     = "11.6.0"
 }
 
+variable "runner_environment" {
+  description = "Environment settings for the runner"
+  type        = "list"
+  default     = []
+}
+
 variable "enable_cloudwatch_logging" {
   description = "Enable or disable the CloudWatch logging."
   default     = 1
