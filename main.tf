@@ -146,6 +146,7 @@ resource "aws_autoscaling_group" "gitlab_runner_instance" {
   max_size                  = "1"
   desired_capacity          = "1"
   health_check_grace_period = 0
+  # XXX new var, runner_ag_wait_for_capacity ?
   launch_configuration      = "${aws_launch_configuration.gitlab_runner_instance.name}"
 
   tags = ["${data.null_data_source.tags.*.outputs}"]
