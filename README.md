@@ -107,6 +107,7 @@ All variables and defaults:
 | allow_iam_service_linked_role_creation | Attach policy to runner instance to create service linked roles. | string | `true` | no |
 | amazon_optimized_amis | AMI map per region-zone for the gitlab-runner instance AMI. | map | `<map>` | no |
 | aws_region | AWS region. | string | - | yes |
+| aws_zone | AWS zone. | string | "a" | no |
 | cache_bucket_prefix | Prefix for s3 cache bucket name. | string | `` | no |
 | cache_expiration_days | Number of days before cache objects expires. | string | `1` | no |
 | cache_user | User name of the user to create to write and read to the s3 cache. | string | `cache_user` | no |

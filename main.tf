@@ -95,6 +95,7 @@ data "template_file" "runners" {
 
   vars {
     aws_region  = "${var.aws_region}"
+    aws_zone    = "${var.aws_zone}"
     gitlab_url  = "${var.runners_gitlab_url}"
     environment = "${var.environment}"
 
