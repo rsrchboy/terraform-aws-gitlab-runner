@@ -18,7 +18,7 @@ check_interval = 0
     image = "${runners_image}"
     privileged = ${runners_privilled}
     disable_cache = false
-    volumes = ["/cache"]
+    volumes = ["/cache", ${runners_volumes}]
     shm_size = 0
   [runners.cache]
     Type = "s3"

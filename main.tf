@@ -132,6 +132,7 @@ data "template_file" "runners" {
     runners_pre_clone_script          = "${var.runners_pre_clone_script}"
     runners_request_concurrency       = "${var.runners_request_concurrency}"
     runners_output_limit              = "${var.runners_output_limit}"
+    runners_volumes                   = "${join(", ", formatlist("%q", var.runners_volumes))}"
     bucket_user_access_key            = "${aws_iam_access_key.cache_user.id}"
     bucket_user_secret_key            = "${aws_iam_access_key.cache_user.secret}"
     bucket_name                       = "${aws_s3_bucket.build_cache.bucket}"

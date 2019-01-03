@@ -195,6 +195,12 @@ variable "runners_request_concurrency" {
   default     = "1"
 }
 
+variable "runners_volumes" {
+  description = "Additional volumes to be mounted by the runner"
+  type        = "list"
+  default     = []
+}
+
 variable "runners_output_limit" {
   description = "Set maximum build log size in kilobytes, by default set to 4096 (4MB)"
   default     = "4096"
